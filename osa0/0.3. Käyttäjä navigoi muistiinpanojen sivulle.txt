@@ -1,0 +1,20 @@
+title Käyttäjä navigoi muistiinpanojen sivulle
+
+Käyttäjä->Selain: 
+note right of Käyttäjä: Käyttäjä kirjoittaa osoiteriville https://fullstack-exampleapp.herokuapp.com/
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+note right of Selain: Muodostetaan HTML, jossa valmiina formi ja id, johon JSON muotoinen data liitetään
+Palvelin->Selain: Status 200, sivun HTML koodi
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+note right of Selain: Tyylitiedoston avulla muokataan sivun ulkoasu
+Palvelin->Selain: Status 200, sivun tyylitiedosto
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+note right of Selain: main.js sisältää ohjeet miten JSON muotoinen data liitetään DOMiin
+note right of Selain: Alun callback -functio määrittelee tapahtuman suoritusajankohdan.
+Palvelin->Selain: Status 200, sivun javascript tiedosto
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+note right of Selain: muodostetaan JSON muotoinen data (main.js liittää sen oikeisiin paikkoihin)
+note right of Selain: Data sisältää muistiinpanot
+Palvelin->Selain: Status 200, JSON muotoinen data
+note right of Käyttäjä: Selain näyttää palvelimen palauttaman HTML:n. HTML on näkymältään tyylitiedoston määrittelemä
+note right of Käyttäjä: Kommentit on liitetty JSON muotoisesta datasta main.js määrittelemällä tavalla

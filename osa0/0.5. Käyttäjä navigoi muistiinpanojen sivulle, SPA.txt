@@ -1,0 +1,17 @@
+title 0.5. Käyttäjä navigoi muistiinpanojen sivulle, SPA
+Käyttäjä->Selain: 
+note right of Käyttäjä: Käyttäjä kirjoittaa osoiteriville https://fullstack-exampleapp.herokuapp.com/spa
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa
+note right of Selain: muodostetaan HTML minne muistiinpanot liitetään
+Palvelin->Selain: Status 200, sivun HTML-koodi
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+Palvelin->Selain: Status 200, sivun tyylitiedosto
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/spa.js
+note right of Selain: spa.js sisältää ohjeet JSON datan käsittelyyn ja liittämiseen DOMiin
+note right of Selain: spa.js hoitaa myös lomakkeen tietojen lähettämisen, kun tapahtumankäsittelijä laukaistaan
+Palvelin->Selain: Status 200, sivun JavaScript -koodi
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+note right of Selain: muodostetaan JSON, jossa muistiinpanot olioina
+Palvelin->Selain: Status 200, sivun JSON data
+Selain->Käyttäjä:
+note right of Käyttäjä: Selain näyttää palvelimen palauttaman HTML:n missä näkyvät muistiinpanot

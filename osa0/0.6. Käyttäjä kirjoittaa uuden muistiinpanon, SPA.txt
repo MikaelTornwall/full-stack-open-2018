@@ -1,0 +1,9 @@
+title 0.6. Käyttäjä kirjoittaa uuden muistiinpanon, SPA
+Käyttäjä->Selain: 
+note right of Käyttäjä: Käyttäjä kirjoittaa uuden muistiinpanon kenttään ja painaa "Talleta" nappia
+Selain->Palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note_spa
+note right of Selain: palvelin ei pyydä uudelleenohjausta, joten muita HTTP-pyyntöjä ei suoriteta
+note right of Selain: spa.js tiedoston koodi lisää muistiinpanon listalle, piirtää listan sisällön uudelleen ja lähettää uuden muistiinpanon palvelimelle
+Palvelin->Selain: Status 201 Created, JSON-muotoinen olio
+Selain->Käyttäjä: 
+note right of Käyttäjä: Selain näyttää HTML:n, johon on nyt piirretty myös uusi muistiinpano

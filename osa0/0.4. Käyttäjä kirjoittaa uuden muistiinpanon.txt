@@ -1,0 +1,20 @@
+title Käyttäjä kirjoittaa uuden muistiinpanon
+Käyttäjä->Selain: 
+note right of Käyttäjä: Käyttäjä kirjoittaa muistiinpanon kommenttikenttään ja painaa nappia tallenna
+Selain->Palvelin: POST https://fullstack-exampleapp.herokuapp.com/new_note
+note right of Selain: Käyttäjän selaimeen kirjoittama muistiinpano viedään palvelimelle
+Palvelin->Selain: 302, uudelleenohjauspyyntö osoitteeseen notes
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/notes
+note right of Selain: Muodostetaan HTML, nyt mukana uusi kommentti
+Palvelin->Selain: Status 200, sivun HTML koodi
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.css
+note right of Selain: Tyylitiedoston avulla muokataan sivun ulkoasu
+Palvelin->Selain: Status 200, sivun tyylitiedosto
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/main.js
+note right of Selain: main.js sisältää ohjeet miten JSON muotoinen data liitetään DOMiin
+note right of Selain: Alun callback -functio määrittelee tapahtuman suoritusajankohdan.
+Palvelin->Selain: Status 200, sivun javascript tiedosto
+Selain->Palvelin: GET https://fullstack-exampleapp.herokuapp.com/data.json
+note right of Selain: muodostetaan JSON, mukana palvelimen luoma uutta muistiinpanoa vastaava olio
+Palvelin->Selain: Status 200, JSON muotoiset oliot
+note right of Käyttäjä: Selain näyttää palvelimen palauttaman HTML:n. Nyt liitettynä on myös uusi kommentti
