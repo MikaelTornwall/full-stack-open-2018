@@ -39,7 +39,7 @@ randomNumber = () => {
 
 vote = () => {
   let copy = this.state.points
-  let points = copy[this.state.selected] += 1
+  copy[this.state.selected] += 1
   let mostVotes = Object.keys(copy).reduce((a, b) => copy[a] > copy[b] ? a : b)
 
   this.setState({

@@ -7,10 +7,12 @@ export const Statistic = ({ rating }) => {
   } else {
   return (
     <table>
-    <tbody>
+      <tbody>
+      <tr>
     <th>
     <h3>Statistiikka</h3>
     </th>
+      </tr>
     <tr>
       <td>Hyvä</td>
       <td>{rating.good}</td>
