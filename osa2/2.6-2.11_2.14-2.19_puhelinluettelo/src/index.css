@@ -1,0 +1,62 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+button {
+  color: white;
+  height: 1.5rem;
+  border: none;
+}
+
+h2, h3, .filter {
+  padding-left: .5rem;
+}
+
+table {
+  background: #FCFCFC;
+  padding: .5rem 0;
+  margin-left: .5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+td {
+  padding: .5rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.submit {
+  background: #FFDD00;
+}
+
+.submit:active {
+  background: #FFF2A3;
+}
+
+.delete {
+  background: #7A0000;
+}
+
+.delete:active {
+  background: #EF0000;
+}
+
+.error {
+  background: #C10000;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.added {
+  background: #12FFA1;
+  color: white;
+  padding: 1rem;
+  margin: 1rem;
+}
